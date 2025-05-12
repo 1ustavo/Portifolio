@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gustavo Cruz</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="script.js"> -->
+  <link rel="stylesheet" href="script.js"> 
 
 </head>
 <script>
@@ -48,15 +48,16 @@
             <div class="cabecario">
                 <a href="https://www.linkedin.com/in/1ustavo/" target="_blank">Linkedin</a>
                 <a href="https://github.com/1ustavo" target="_blank">Github</a>
-                Gusta
+                <img src="img/g.png" alt="Letra G" class="logo-g">
                 <a href="#" target="_blank">Contact Me</a>
                 <a href="#" target="_blank">Resume</a>
+                <button id="toggle-theme">🌙</button>
             </div>
     </header>
     <div class="info">
          <p class="info-mov">
-  Hi there!<br>
-  My name is Gustavo, I'm <span class="typed-text"></span><span class="cursor">|</span>
+  <span class="rgb-text">Hi there!<br>
+  My name is Gustavo,</span> I'm <span class="typed-text"></span><span class="cursor">|</span>
 </p>
 
            <p class="info-resume">
@@ -71,6 +72,27 @@
 
            </div>
     </div>
-    
+    <script>
+    const toggleButton = document.getElementById("toggle-theme");
+
+    function setTheme(mode) {
+      if (mode === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleButton.textContent = "☀️";
+      } else {
+        document.body.classList.remove("dark-mode");
+        toggleButton.textContent = "🌙";
+      }
+      localStorage.setItem("theme", mode);
+    }
+
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+
+    toggleButton.addEventListener("click", () => {
+      const currentTheme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+      setTheme(currentTheme === "dark" ? "light" : "dark");
+    });
+  </script>
 </body>
 </html>

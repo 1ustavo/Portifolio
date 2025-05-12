@@ -18,6 +18,8 @@ header{
     width: 100%;
     justify-content: space-around;
     display: flex;
+    gap: 30px;
+    align-items: center;
     
 }
 .cabecario a{
@@ -90,6 +92,23 @@ body{
     animation: blink 0.7s infinite;
     margin-left: 3px;
 }
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode header {
+    background-color: #1f1f1f;
+}
+
+body.dark-mode .cabecario a {
+    color: white;
+}
+
+body.dark-mode .typed-text,
+body.dark-mode .cursor {
+    color: white;
+}
 
 @keyframes blink {
     0%, 100% { opacity: 1; }
@@ -98,4 +117,32 @@ body{
 
 .typed-text {
     color: #000; /* você pode mudar para outra cor se quiser destaque */
+}
+.rgb-text {
+    background: linear-gradient(270deg, #ff0000, #00ff00, #0000ff, #ff0000);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rgbFlow 5s ease infinite;
+    font-size: 36px;
+}
+@keyframes rgbFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.logo-g {
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-g:hover {
+    transform: scale(1.1);
 }
