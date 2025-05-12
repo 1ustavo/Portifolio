@@ -14,14 +14,19 @@ header{
     
 
 }
-.cabecario{
-    width: 100%;
-    justify-content: space-around;
+.cabecario {
     display: flex;
-    gap: 30px;
+    justify-content: space-around;
     align-items: center;
-    
+    width: 100%;
+    padding: 0 40px;
 }
+.left-links, .right-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
 .cabecario a{
     color: black;
     font-size: 18px;
@@ -125,6 +130,7 @@ body.dark-mode .cursor {
     -webkit-text-fill-color: transparent;
     animation: rgbFlow 5s ease infinite;
     font-size: 36px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 @keyframes rgbFlow {
     0% {
@@ -138,11 +144,28 @@ body.dark-mode .cursor {
     }
 }
 .logo-g {
-    height: 60px;
+    height: 70px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
 
 .logo-g:hover {
     transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .cabecario {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .left-links, .right-links {
+        flex-direction: column;
+    }
+
+    .info-resume, .info-mov {
+        font-size: 20px;
+        width: 90%;
+    }
 }
