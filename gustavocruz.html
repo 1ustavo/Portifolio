@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo Cruz</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="script.js"> -->
+
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const typedText = document.querySelector(".typed-text");
+    const words = [
+      "a c++ developer",
+      "a skater",
+      "a sporter",
+      "a romantic guy"
+    ];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+      const currentWord = words[wordIndex];
+      const currentText = currentWord.substring(0, charIndex);
+
+      typedText.textContent = currentText;
+
+      if (!isDeleting && charIndex < currentWord.length) {
+        charIndex++;
+        setTimeout(type, 100);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(type, 50);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(type, 800);
+      }
+    }
+
+    type();
+  });
+</script>
+<body>
+    <header>
+            <div class="cabecario">
+                <a href="https://www.linkedin.com/in/1ustavo/" target="_blank">Linkedin</a>
+                <a href="https://github.com/1ustavo" target="_blank">Github</a>
+                Gusta
+                <a href="#" target="_blank">Contact Me</a>
+                <a href="#" target="_blank">Resume</a>
+            </div>
+    </header>
+    <div class="info">
+         <p class="info-mov">
+  Hi there!<br>
+  My name is Gustavo, I'm <span class="typed-text"></span><span class="cursor">|</span>
+</p>
+
+           <p class="info-resume">
+            I am a software engineer learning full-stack development, currently working as a full-stack developer working with Angular and Java.
+           </p>
+
+           <div class="elementos">
+            <a href="https://www.instagram.com/1ustavo/" target="_blank"><img src="img/instagram.png" alt=""></a>
+            <a href="https://www.linkedin.com/in/1ustavo/" target="_blank"><img src="img/linkedin.png" alt=""></a>
+            <a href="#"><img src="img/social.png" target="_blank" alt="" ></a>
+            <a href="https://x.com/1ustavo" target="_blank"><img src="img/twitter.png" alt=""></a>
+
+           </div>
+    </div>
+    
+</body>
+</html>

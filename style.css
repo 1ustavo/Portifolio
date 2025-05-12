@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: Poppins, sans-serif;
+}
+header{
+    width: 100%;
+    height: 100px;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    
+
+}
+.cabecario{
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    
+}
+.cabecario a{
+    color: black;
+    font-size: 18px;
+}
+
+.info{
+    width: 100%;
+    height: 300px;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60px;
+}
+.info-mov{
+    width: 50%;
+    /* display: flex; */
+    height: 80px;
+    align-items: center;
+    font-size: 26px;
+    margin-top: 10px;
+    
+}
+
+.info-resume{
+    width: 80%;
+    display: flex;
+    height: 60px;
+    font-size: 26px;
+    align-items: center;
+    margin-top: 30px;
+}
+.elementos{
+    width: 80%;
+    height: 40px;
+    display: flex;
+    align-items:center;
+}
+.elementos img{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+.elementos a:hover{
+    transition: 0.3s;
+    margin-top: -10px;
+}
+body{
+    background-color: #f2f6f8;
+}
+.cabecario a::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    background: rgb(0, 0, 0);
+    transition: width 0.2s ease-in;
+     margin: 0 auto;
+}
+
+.cabecario a:hover::after {
+    width: 100%;
+}
+.cursor {
+    display: inline-block;
+    font-weight: bold;
+    color: black;
+    animation: blink 0.7s infinite;
+    margin-left: 3px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.typed-text {
+    color: #000; /* você pode mudar para outra cor se quiser destaque */
+}
