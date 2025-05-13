@@ -1,102 +1,48 @@
 <!DOCTYPE html>
-<html lang="br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo Cruz</title>
-    <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="script.js"> 
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portfólio de Gustavo Cruz - Desenvolvedor Full-Stack com Angular e Java"/>
+  <title>Gustavo Cruz</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/g.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const typedText = document.querySelector(".typed-text");
-    const words = [
-      "a c++ developer",
-      "a skater",
-      "a sporter",
-      "a romantic guy"
-    ];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function type() {
-      const currentWord = words[wordIndex];
-      const currentText = currentWord.substring(0, charIndex);
-
-      typedText.textContent = currentText;
-
-      if (!isDeleting && charIndex < currentWord.length) {
-        charIndex++;
-        setTimeout(type, 100);
-      } else if (isDeleting && charIndex > 0) {
-        charIndex--;
-        setTimeout(type, 50);
-      } else {
-        isDeleting = !isDeleting;
-        if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(type, 800);
-      }
-    }
-
-    type();
-  });
-</script>
 <body>
-    <header>
-  <div class="cabecario">
-    <div class="left-links">
-      <a href="https://www.linkedin.com/in/1ustavo/" target="_blank">Linkedin</a>
-      <a href="https://github.com/1ustavo" target="_blank">Github</a>
+  <header>
+    <nav class="cabecario">
+      <div class="left-links">
+        <a href="https://www.linkedin.com/in/1ustavo/" target="_blank">Linkedin</a>
+        <a href="https://github.com/1ustavo" target="_blank">Github</a>
+      </div>
+      <img src="img/g.png" alt="Logo Gustavo" class="logo-g">
+      <div class="right-links">
+        <a href="#">Contato</a>
+        <a href="#">Currículo</a>
+        <label class="theme-switch">
+          <input type="checkbox" id="toggle-theme">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <main class="info">
+    <h1 class="info-mov">
+      <span class="rgb-text">Hi there!<br> My name is Gustavo,</span> I'm <span class="typed-text"></span><span class="cursor">|</span>
+    </h1>
+    <p class="info-resume">
+      I am a software engineer learning full-stack development, currently working as a full-stack developer with Angular and Java.
+    </p>
+    <div class="elementos">
+      <a href="https://www.instagram.com/1ustavo/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+      <a href="https://www.linkedin.com/in/1ustavo/" target="_blank"><img src="img/linkedin.png" alt="Linkedin"></a>
+      <a href="#"><img src="img/social.png" alt="Outro link social"></a>
+      <a href="https://x.com/1ustavo" target="_blank"><img src="img/twitter.png" alt="Twitter"></a>
     </div>
-                <img src="img/g.png" alt="Letra G" class="logo-g">
-                <div class="right-links">
-              <a href="#">Contact Me</a>
-              <a href="#">Resume</a>
-      <button id="toggle-theme">🌙</button>
-    </div>
-  </div>
-</header>
-    <div class="info">
-         <p class="info-mov">
-  <span class="rgb-text">Hi there!<br>
-  My name is Gustavo,</span> I'm <span class="typed-text"></span><span class="cursor">|</span>
-</p>
+  </main>
 
-           <p class="info-resume">
-            I am a software engineer learning full-stack development, currently working as a full-stack developer working with Angular and Java.
-           </p>
-
-           <div class="elementos">
-            <a href="https://www.instagram.com/1ustavo/" target="_blank"><img src="img/instagram.png" alt=""></a>
-            <a href="https://www.linkedin.com/in/1ustavo/" target="_blank"><img src="img/linkedin.png" alt=""></a>
-            <a href="#"><img src="img/social.png" target="_blank" alt="" ></a>
-            <a href="https://x.com/1ustavo" target="_blank"><img src="img/twitter.png" alt=""></a>
-
-           </div>
-    </div>
-    <script>
-    const toggleButton = document.getElementById("toggle-theme");
-
-    function setTheme(mode) {
-      if (mode === "dark") {
-        document.body.classList.add("dark-mode");
-        toggleButton.textContent = "☀️";
-      } else {
-        document.body.classList.remove("dark-mode");
-        toggleButton.textContent = "🌙";
-      }
-      localStorage.setItem("theme", mode);
-    }
-
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
-
-    toggleButton.addEventListener("click", () => {
-      const currentTheme = document.body.classList.contains("dark-mode") ? "dark" : "light";
-      setTheme(currentTheme === "dark" ? "light" : "dark");
-    });
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
