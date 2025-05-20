@@ -13,6 +13,7 @@ body {
   min-height: 100vh;
 }
 
+/* Header */
 header {
   width: 100%;
   height: 100px;
@@ -65,10 +66,12 @@ header {
   object-fit: contain;
   transition: transform 0.3s ease;
 }
+
 .logo-g:hover {
   transform: scale(1.1);
 }
 
+/* Conteúdo principal */
 .info {
   width: 100%;
   min-height: calc(100vh - 180px);
@@ -113,6 +116,7 @@ header {
   transform: scale(1.2);
 }
 
+/* Efeito de digitação */
 .cursor {
   display: inline-block;
   font-weight: bold;
@@ -125,11 +129,14 @@ header {
   color: #000;
 }
 
+/* Switch de tema */
 .theme-switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 30px;
+  z-index: 2; /* Garante que fique sobre qualquer coisa */
+  margin-top: 5px;
 }
 
 .theme-switch input {
@@ -175,6 +182,7 @@ input:checked + .slider:before {
   content: "☀️";
 }
 
+/* Texto RGB animado */
 .rgb-text {
   background: linear-gradient(270deg, #ff0000, #00ff00, #0000ff, #ff0000);
   background-size: 600% 600%;
@@ -185,6 +193,7 @@ input:checked + .slider:before {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
+/* Animações */
 @keyframes rgbFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -196,7 +205,7 @@ input:checked + .slider:before {
   50% { opacity: 0; }
 }
 
-/* Dark Mode */
+/* Tema escuro */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
@@ -224,7 +233,7 @@ body.dark-mode .info-resume {
   color: #aaa;
 }
 
-/* Responsivo */
+/* Responsividade */
 @media (max-width: 768px) {
   .cabecario {
     flex-direction: column;
@@ -232,12 +241,23 @@ body.dark-mode .info-resume {
     padding: 20px;
   }
 
-  .left-links, .right-links {
+  .left-links,
+  .right-links {
     flex-direction: column;
     align-items: center;
   }
 
-  .info-mov,
+  .theme-switch {
+    margin-top: 10px;
+    z-index: 1;
+  }
+
+  .info-mov {
+    margin-top: 30px;
+    width: 100%;
+    font-size: 20px;
+  }
+
   .info-resume {
     width: 100%;
     font-size: 20px;
@@ -245,11 +265,6 @@ body.dark-mode .info-resume {
 
   .rgb-text {
     font-size: 28px;
-  }
-
-  .elementos {
-    flex-direction: row;
-    justify-content: center;
   }
 
   .elementos img {
