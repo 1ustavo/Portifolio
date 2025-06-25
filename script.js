@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const words = [
     "a C++ developer",
     "a playwright",
-    "I am a cook",
+    "a cook",
     "a romantic guy"
   ];
   let wordIndex = 0;
