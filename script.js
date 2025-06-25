@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const typedText = document.querySelector(".typed-text");
   const words = [
     "a C++ developer",
-    "a skater",
-    "a sporter",
+    "a playwright",
+    "I am a cook",
     "a romantic guy"
   ];
   let wordIndex = 0;
