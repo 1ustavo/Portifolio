@@ -125,6 +125,13 @@ header {
   margin-left: 3px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.info {
+  animation: fadeIn 1s ease forwards;
+}
 .typed-text {
   color: #000;
 }

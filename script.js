@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Efeito de digitação
   const typedText = document.querySelector(".typed-text");
   const words = [
-    "a C++ developer",
-    "a playwright",
-    "a cook",
-    "a romantic guy"
+  "a Full-Stack Developer",
+  "focused on java & php",
+  "building scalable applications",
+  "passionate about clean code"
   ];
   let wordIndex = 0;
   let charIndex = 0;
@@ -35,8 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   type();
-
-  // Tema escuro
   const toggleTheme = document.getElementById("toggle-theme");
   const socialIcons = document.querySelectorAll(".elementos img");
   const logo = document.getElementById("logo");
@@ -47,18 +44,17 @@ document.addEventListener("DOMContentLoaded", function () {
   socialIcons.forEach(img => {
     img.style.filter = "invert(100%) brightness(1.2)";
   });
-  logo.src = "img/logo-dark.png"; // logo branca
+  logo.src = "img/logo-dark.png";
 } else {
   document.body.classList.remove("dark-mode");
   socialIcons.forEach(img => {
     img.style.filter = "none";
   });
-  logo.src = "img/logo-light.png"; // logo preta
+  logo.src = "img/logo-light.png";
 }
 
   }
 
-  // Verificar tema salvo ou preferência do sistema
   const savedTheme = localStorage.getItem("theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
@@ -83,13 +79,13 @@ function setTheme(mode) {
     socialIcons.forEach(img => {
       img.style.filter = "invert(100%) brightness(1.2)";
     });
-    logo.src = "img/g-white.png"; // <- logo branca no dark mode
+    logo.src = "img/g-white.png";
   } else {
     document.body.classList.remove("dark-mode");
     socialIcons.forEach(img => {
       img.style.filter = "none";
     });
-    logo.src = "img/g.png"; // <- logo preta no modo claro
+    logo.src = "img/g.png";
   }
   localStorage.setItem("theme", mode);
 }
